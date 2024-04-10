@@ -19,15 +19,16 @@ public class CSVTest {
     }
 
     //F*** this method :)
-    public void addData(String name, String match, String team, boolean leftStart, int autonMissSpeaker, int autonMadeSpeaker,
+    public void addData(String curTime, String name, String match, String team, boolean leftStart, int autonMissSpeaker, int autonMadeSpeaker,
                         int autonMissAmp, int autonMadeAmp, int teleopMissSpeaker, int teleopMadeSpeaker, int teleopMissAmp,
                         int teleopMadeAmp, int teleopMissTrap, int teleopMadeTrap, boolean inStage, boolean isParked,
                         boolean onStageSingle, boolean onStagePlural, boolean spotLit, int driverSkillDef, int driverSkillOff,
                         boolean didBreak, String teamStrat, String otherComments) {
         String[] temp = new String[23];
 
-        //TimeStamp - To Be Implemented If Time
-        temp[0] = "N/A";
+        //TimeStamp - Provides the time in the following format:
+        //Month/Day/Year Hour:Minutes
+        temp[0] = curTime;
         //First name
         temp[1] = name;
         //Match Number

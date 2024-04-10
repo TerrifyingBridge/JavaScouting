@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.time.ZonedDateTime;
 
 public class Frame extends JFrame implements ActionListener {
 
@@ -47,6 +48,8 @@ public class Frame extends JFrame implements ActionListener {
 
     private boolean leftStart = false;
 
+    private String curTime = "";
+
     private int autonMissSpeaker = 0;
     private int autonMadeSpeaker = 0;
     private int autonMissAmp = 0;
@@ -75,6 +78,10 @@ public class Frame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        ZonedDateTime zdt = ZonedDateTime.now();
+        curTime = zdt.getMonthValue() + "/" + zdt.getDayOfMonth() + "/" + zdt.getYear() +
+                " " + zdt.getHour() + ":" + zdt.getMinute();
+
         name = tf1.getText();
         name = name.replace(",", " ");
         match = tf2.getText();
@@ -112,7 +119,7 @@ public class Frame extends JFrame implements ActionListener {
         otherComments = otherCom.getText();
         otherComments = otherComments.replace(",", " ");
 
-        csv.addData(name, match, team, leftStart, autonMissSpeaker, autonMadeSpeaker, autonMissAmp, autonMadeAmp, teleopMissSpeaker, teleopMadeSpeaker, teleopMissAmp, teleopMadeAmp, teleopMissTrap, teleopMadeTrap, inStage, isParked, onstageSingle, onstagePlural,
+        csv.addData(curTime, name, match, team, leftStart, autonMissSpeaker, autonMadeSpeaker, autonMissAmp, autonMadeAmp, teleopMissSpeaker, teleopMadeSpeaker, teleopMissAmp, teleopMadeAmp, teleopMissTrap, teleopMadeTrap, inStage, isParked, onstageSingle, onstagePlural,
                 spotLit, driverSkillOff, driverSkillDef, didBreak, teamStrat, otherComments);
         //csv.printArray(csv.data.get(csv.data.size()-1));
 
@@ -133,7 +140,7 @@ public class Frame extends JFrame implements ActionListener {
         panel1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         panel1.setLayout(new GridLayout(33,2));
 
-        frame.setSize(new Dimension(900, 900));
+        frame.setSize(new Dimension(900, 600));
         frame.setLocationRelativeTo(null);
 
         JLabel name = new JLabel("Your First Name");
