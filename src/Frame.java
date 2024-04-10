@@ -158,13 +158,13 @@ public class Frame extends JFrame implements ActionListener {
         JLabel below2 = new JLabel("Answer Below");
 
         JLabel missed1 = new JLabel("Missed");
-        miss1Slider = new JSlider(JSlider.HORIZONTAL, 0, 16, 0);
+        miss1Slider = new JSlider(JSlider.HORIZONTAL, 0, 8, 0);
         miss1Slider.setMajorTickSpacing(1);
         miss1Slider.setPaintLabels(true);
         miss1Slider.setSnapToTicks(true);
 
         JLabel made1 = new JLabel("Made");
-        made1Slider = new JSlider(JSlider.HORIZONTAL, 0, 16, 0);
+        made1Slider = new JSlider(JSlider.HORIZONTAL, 0, 8, 0);
         made1Slider.setMajorTickSpacing(1);
         made1Slider.setPaintLabels(true);
         made1Slider.setSnapToTicks(true);
@@ -173,13 +173,13 @@ public class Frame extends JFrame implements ActionListener {
         JLabel below3 = new JLabel("Answer Below");
 
         JLabel missed2 = new JLabel("Missed");
-        miss2Slider = new JSlider(JSlider.HORIZONTAL, 0, 16, 0);
+        miss2Slider = new JSlider(JSlider.HORIZONTAL, 0, 8, 0);
         miss2Slider.setMajorTickSpacing(1);
         miss2Slider.setPaintLabels(true);
         miss2Slider.setSnapToTicks(true);
 
         JLabel made2 = new JLabel("Made");
-        made2Slider = new JSlider(JSlider.HORIZONTAL, 0, 16, 0);
+        made2Slider = new JSlider(JSlider.HORIZONTAL, 0, 8, 0);
         made2Slider.setMajorTickSpacing(1);
         made2Slider.setPaintLabels(true);
         made2Slider.setSnapToTicks(true);
